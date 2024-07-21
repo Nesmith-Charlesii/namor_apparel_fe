@@ -1,10 +1,12 @@
 import React from 'react';
-import Sphere from './components/threeJs/sphere';
+import useStyles from './styles';
 
 const Home = () => {
+    const classes = useStyles();
+
     return (
-        <div>
-            <Sphere/>
+        <div className={classes.container}>
+            <h1>NAMOR APPAREL</h1>
         </div>
     )
 };
