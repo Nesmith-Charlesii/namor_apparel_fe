@@ -5,8 +5,15 @@ const useStyles = createUseStyles({
     container: {
         height: "100vh",
         width: "100vw",
-        //fontFamily: theme.fonts.primary,
         backgroundColor: theme.colors.primary,
+    },
+    title: {
+        '& h1': {
+            fontFamily: theme.fonts.primary,
+            letterSpacing: 2,
+            margin: 0,
+            
+        }
     }
 });
 
