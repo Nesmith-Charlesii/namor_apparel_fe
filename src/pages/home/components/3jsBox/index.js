@@ -1,1 +1,0 @@
-import { OrbitControls } from "@react-three/drei";
