@@ -4,18 +4,26 @@ import theme from "../../shared/styles/theme";
 const useStyles = createUseStyles({
     container: {
         height: "100vh",
-        backgroundColor: theme.colors.primary,
-    },
-    title: {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100%",
-        '& h1': {
-            fontFamily: theme.fonts.primary,
-            letterSpacing: 2,
-            margin: 0,
-            
+        // backgroundColor: theme.colors.primary,
+    },
+    title: {
+        fontFamily: theme.fonts.primary,
+        textAlign: "center",
+        padding: "0px 20px 0px 20px",
+        '& p:nth-child(1)': {
+            fontSize: "12rem",
+            letterSpacing: 44,
+            marginTop: 0,
+            marginBottom: 0
+        },
+        '& p:nth-child(2)': {
+            fontSize: "4rem",
+            letterSpacing: 24,
+            marginTop: 0,
+            marginBottom: 0
         }
     }
 });
