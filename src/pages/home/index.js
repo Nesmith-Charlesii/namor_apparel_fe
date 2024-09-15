@@ -2,23 +2,35 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import useStyles from './pageStyles';
+import { Observer } from 'gsap/Observer';
 
-gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(useGSAP, Observer);
 
 const Home = () => {
     const classes = useStyles();
+    const titleAcronym = useRef();
+    
+    useGSAP(() => {
+        Observer.create({
+            target: window,
+            type: "wheel, scroll",
+            onChange: () => { 
+                gsap.to(titleAcronym.current, { color: "blue", duration: 2 })
+            }
+        })
+    });
 
     return (
-        <div className={classes.container}>
-           <div className={classes.titleContainer}>
-            <p className={classes.titleAcronym}>
+        <div className={ classes.container }>
+           <div className={ classes.titleContainer }>
+            <p className={ classes.titleAcronym } ref={titleAcronym}>
                 <span>H</span>
                 <span>.</span>
                 <span>o</span>
                 <span>.</span>
                 <span>N</span>
             </p>
-            <p className={classes.titleName}>HOUSE of NAMOR</p>
+            <p className={ classes.titleName }>HOUSE of NAMOR</p>
            </div>
         </div>
     )
