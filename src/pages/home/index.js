@@ -6,9 +6,15 @@ const Home = () => {
 
     return (
         <div className={classes.container}>
-           <div className={classes.title}>
-            <p>H.o.N</p>
-            <p>HOUSE of NAMOR</p>
+           <div className={classes.titleContainer}>
+            <p className={classes.titleAcronym}>
+                <span>H</span>
+                <span>.</span>
+                <span>o</span>
+                <span>.</span>
+                <span>N</span>
+            </p>
+            <p className={classes.titleName}>HOUSE of NAMOR</p>
            </div>
         </div>
     )
