@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import useStyles from './pageStyles';
+
+gsap.registerPlugin(useGSAP)
 
 const Home = () => {
     const classes = useStyles();
