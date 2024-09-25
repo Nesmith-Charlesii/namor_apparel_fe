@@ -45,7 +45,6 @@ const useStyles = createUseStyles({
         }
     },
     titleName: {
-        opacity: 0,
         fontWeight: 600,
         fontSize: "4rem",
         letterSpacing: 24,

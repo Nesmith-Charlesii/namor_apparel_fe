@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import useStyles from './pageStyles';
@@ -10,7 +10,14 @@ const Home = () => {
     const classes = useStyles();
     const titleAcronym = useRef();
     const container = useRef();
-    const titleContainer = useRef();
+    const titleName = useRef();
+
+    useEffect(() => {
+        const titleNameRef = titleName.current;
+        titleNameRef.innerHTML = titleNameRef.innerText.split("").map(letter => {
+        return `<span>${letter}</span>`;
+      }).join("");
+    }, [])
 
     useGSAP(() => {
         const tl = gsap.timeline()
@@ -69,7 +76,7 @@ const Home = () => {
 
     return (
         <div className={classes.container} ref={container}>
-            <div className={classes.titleContainer} ref={titleContainer}>
+            <div className={classes.titleContainer}>
                 <div className={classes.titleAcronym} ref={titleAcronym}>
                     <div>H</div>
                     <div>.</div>
@@ -77,7 +84,7 @@ const Home = () => {
                     <div>.</div>
                     <div>N</div>
                 </div>
-                <div className={classes.titleName}>HOUSE of NAMOR</div>
+                <div className={classes.titleName} ref={titleName}>HOUSE of NAMOR</div>
             </div>
         </div>
     )
