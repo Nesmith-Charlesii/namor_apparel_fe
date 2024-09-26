@@ -26,21 +26,18 @@ const useStyles = createUseStyles({
         marginTop: 0,
         marginBottom: 0,
         '& div:nth-child(1)': {
-            filter: "blur(5px)",
             opacity: 0
         },
         '& div:nth-child(2)': {
-            filter: "blur(5px)"
+            opacity: 0
         },
         '& div:nth-child(3)': {
-            filter: "blur(5px)",
             opacity: 0
         },
         '& div:nth-child(4)': {
-            filter: "blur(5px)"
+            opacity: 0
         },
         '& div:nth-child(5)': {
-            filter: "blur(5px)",
             opacity: 0
         }
     },

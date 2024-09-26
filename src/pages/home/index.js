@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import useStyles from './pageStyles';
@@ -12,67 +12,19 @@ const Home = () => {
     const container = useRef();
     const titleName = useRef();
 
-    useEffect(() => {
-        const titleNameRef = titleName.current;
-        titleNameRef.innerHTML = titleNameRef.innerText.split("").map(letter => {
-        return `<span>${letter}</span>`;
-      }).join("");
-    }, [])
+    const titleText = "HOUSE of NAMOR";
+    const letterArr = titleText.split("")
 
     useGSAP(() => {
-        const tl = gsap.timeline()
+        const tl = gsap.timeline();
 
-        tl.to(
-            titleAcronym.current.querySelector("div:nth-child(2)"),
-            {
-                opacity: 1,
-                x: -100,
-                y: 100,
-                yoyo: true,
-                repeat: 1,
-                ease: "back.inOut",
-                duration: 2,
-                onComplete: () => {
-                    gsap.to(
-                        titleAcronym.current.querySelector("div:nth-child(2)"),
-                        { filter: "blur(0px)", duration: 1 }
-                    )
-                }
-            }, 0
+        tl.fromTo(
+            ".letter",
+            { opacity: 0, filter: "blur(5px)", transform: "rotateX(270deg)" },
+            { opacity: 1, filter: "blur(0px)", transform: "rotateX(0deg)", stagger: 0.2, duration: 2}
         )
-            .to(
-                titleAcronym.current.querySelector("div:nth-child(4)"),
-                {
-                    opacity: 1,
-                    x: 100,
-                    y: -100,
-                    yoyo: true,
-                    repeat: 1,
-                    ease: "back.inOut",
-                    duration: 2,
-                    onComplete: () => {
-                        gsap.to(
-                            titleAcronym.current.querySelector("div:nth-child(4)"),
-                            { filter: "blur(0px)", duration: 1 }
-                        )
-                    }
-                }, 0
-            )
-            .fromTo([
-                titleAcronym.current.querySelector("div:nth-child(1)"),
-                titleAcronym.current.querySelector("div:nth-child(3)"),
-                titleAcronym.current.querySelector("div:nth-child(5)"),
-                ],
-                { y: 20, transform: "rotateX(270deg)" },
-                {
-                    opacity: 1,
-                    filter: "blur(0px)",
-                    transform: "rotateY(360deg)",
-                    duration: 2,
-                    stagger: 0.25
-                }, 3
-            )
-    }, { dependencies: [], scope: container }, [])
+
+    }, { dependencies: [], scope: container });
 
     return (
         <div className={classes.container} ref={container}>
@@ -84,10 +36,17 @@ const Home = () => {
                     <div>.</div>
                     <div>N</div>
                 </div>
-                <div className={classes.titleName} ref={titleName}>HOUSE of NAMOR</div>
+                <div className={classes.titleName} ref={titleName}>
+                    {
+                        letterArr.map((letter, index) => (
+                            <span className='letter'>{letter}</span>
+                        ))
+                    }
+                </div>
+                {/* <div className={classes.titleName} ref={titleName}>HOUSE of NAMOR</div> */}
             </div>
         </div>
-    )
+    );
 };
 
 export default Home;
