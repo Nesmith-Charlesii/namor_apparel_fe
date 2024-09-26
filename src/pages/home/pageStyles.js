@@ -42,6 +42,8 @@ const useStyles = createUseStyles({
         }
     },
     titleName: {
+        display: "flex",
+        flexDirection: "row",
         fontWeight: 600,
         fontSize: "4rem",
         letterSpacing: 24,

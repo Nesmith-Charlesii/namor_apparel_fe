@@ -20,8 +20,20 @@ const Home = () => {
 
         tl.fromTo(
             ".letter",
-            { opacity: 0, filter: "blur(5px)", transform: "rotateX(270deg)" },
-            { opacity: 1, filter: "blur(0px)", transform: "rotateX(0deg)", stagger: 0.2, duration: 2}
+            { 
+                filter: "blur(10px)",
+                opacity: 0, 
+                y: -140
+            },
+            { 
+                filter: "blur(0px)",
+                opacity: 1, 
+                y: -100,
+                yoyo: true, 
+                stagger: { each: 0.2, from: "random" }, 
+                ease: "bounce.out",
+                duration: 2 
+            }
         )
 
     }, { dependencies: [], scope: container });
@@ -39,11 +51,10 @@ const Home = () => {
                 <div className={classes.titleName} ref={titleName}>
                     {
                         letterArr.map((letter, index) => (
-                            <span className='letter'>{letter}</span>
+                            <div className='letter'>{letter}</div>
                         ))
                     }
                 </div>
-                {/* <div className={classes.titleName} ref={titleName}>HOUSE of NAMOR</div> */}
             </div>
         </div>
     );
