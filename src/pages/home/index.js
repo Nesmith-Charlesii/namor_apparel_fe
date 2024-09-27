@@ -22,13 +22,8 @@ const Home = () => {
 
         tl.fromTo(
             titleName.current,
-            { x: -50, opacity: 0 },
-            { x: 0, opacity: 1, duration: 3, ease: "power1.inOut" }, 0
-        )
-        tl.fromTo(
-            titleAcronym.current,
-            { x: 50, opacity: 0 },
-            { x: 0, opacity: 1, duration: 3, ease: "power1.inOut" }, 0
+            { x: -120, opacity: 0 },
+            { x: 0, opacity: 1, duration: 2, ease: "power1.inOut" }, 0
         )
         tl.fromTo(
             ".letter",
@@ -64,10 +59,13 @@ const Home = () => {
                 onComplete: () => {
                     gsap.to(
                         titleAcronym.current.querySelector("div:nth-child(2)"),
-                        { filter: "blur(0px)", duration: 1 }
+                        { 
+                            filter: "blur(0px)", 
+                            duration: 1 
+                        }
                     )
                 }
-            }, "-=2"
+            }, 0
         )
         // 2nd acronym period
         .fromTo(
@@ -90,23 +88,24 @@ const Home = () => {
                         { filter: "blur(0px)", duration: 1 }
                     )
                 }
-            }, 0
+            }, 0.2
         )
         // Title Acronym Letters
         .fromTo(
             titleAcronym.current.querySelectorAll("div:nth-child(1), div:nth-child(3), div:nth-child(5)"),
             {
+                y: 10,
                 filter: "blur(10px)",
                 opacity: 0,
             },
             {
+
                 filter: "blur(0px)",
                 opacity: 1,
                 stagger: { each: 0.3, from: "random" },
                 duration: 2,
-            }, "-=1"
+            }, 1.5
         )
-
     }, { dependencies: [], scope: container });
 
     return (
