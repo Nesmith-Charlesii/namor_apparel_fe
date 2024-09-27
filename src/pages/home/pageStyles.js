@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
         justifyContent: "center",
         alignItems: "center",
         //backgroundColor: theme.colors.primary,
-        //backgroundColor: "rgb(60, 60, 60)",
+        backgroundColor: "rgb(20, 20, 20)",
     },
     titleContainer: {
         display: "flex",
@@ -16,8 +16,8 @@ const useStyles = createUseStyles({
         justifyContent: "center",
         alignItems: "center",
         fontFamily: theme.fonts.primary,
-        color: "rgb(60, 60, 60)",
-        //color: theme.colors.primary,
+        //color: "rgb(60, 60, 60)",
+        color: theme.colors.primary,
     },
     titleAcronym: {
         display: "flex",
