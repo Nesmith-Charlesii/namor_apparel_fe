@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
         padding: "40px 0px 0px 0px"
     },
     navLinks: {
-        color: "rgb(245, 245, 245)",
+        color: "rgb(60, 60, 60)",
         fontFamily: theme.fonts.primary,
         display: "flex",
         justifyContent: "space-around",
@@ -18,9 +18,9 @@ const useStyles = createUseStyles({
         fontSize: "1.1rem",
         fontWeight: 600,
         '& div:nth-child(3)': {
-            fontSize: "1.6rem",
-            color: theme.colors.primary,
-            fontWeight: 700
+            fontSize: "1.7rem",
+            color: "rgb(60, 60, 60)",
+            fontWeight: 800
         }
     }
 })

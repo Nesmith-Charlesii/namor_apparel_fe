@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import useStyles from './pageStyles';
 import { Observer } from 'gsap/Observer';
+import theme from '../../shared/styles/theme';
 
 gsap.registerPlugin(useGSAP, Observer);
 

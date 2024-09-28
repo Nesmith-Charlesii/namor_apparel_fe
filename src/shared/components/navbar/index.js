@@ -14,16 +14,17 @@ const Navbar = () => {
 
         tl.fromTo(
             navbarLinks.current.querySelectorAll("div:nth-child(1),div:nth-child(2),div:nth-child(3),div:nth-child(4),div:nth-child(5)"),
-            { y: 10, 
+            { 
+                y: -10, 
                 opacity: 0, 
-                transform: "rotateX(270deg)" 
+                transform: "rotateY(270deg)" 
             },
             { 
                 y: 0, 
                 stagger: { each: 0.2, from: "random" }, 
-                opacity: 1, transform: "rotateX(0deg)", 
+                opacity: 1, transform: "rotateY(0deg)", 
                 duration: .5,
-                delay: 2
+                delay: 3
             }
         )
     })
