@@ -3,21 +3,23 @@ import theme from "../../shared/styles/theme";
 
 const useStyles = createUseStyles({
     container: {
+        position: "relative",
         height: "100vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: theme.colors.primary,
-        //backgroundColor: "rgb(20, 20, 20)",
+        //backgroundColor: theme.colors.primary,
+        backgroundColor: "rgb(20, 20, 20)",
     },
     titleContainer: {
+        zIndex: 1,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         fontFamily: theme.fonts.primary,
-        color: "rgb(60, 60, 60)",
-        //color: theme.colors.primary,
+        //color: "rgb(60, 60, 60)",
+        color: theme.colors.primary,
     },
     titleAcronym: {
         display: "flex",
@@ -49,6 +51,12 @@ const useStyles = createUseStyles({
         letterSpacing: 24,
         marginTop: 0,
         marginBottom: 0,
+    },
+    womanImage: {
+        position: "absolute",
+        height: "100%",
+        width: "100%",
+        display: "flex"
     }
 });
 

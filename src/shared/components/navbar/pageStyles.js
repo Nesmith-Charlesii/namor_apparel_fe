@@ -4,12 +4,14 @@ import theme from "../../styles/theme";
 const useStyles = createUseStyles({
     navbar: {
         position: "fixed",
+        zIndex: 1,
         width: "100%",
         backgroundColor: "transparent",
         padding: "40px 0px 0px 0px"
     },
     navLinks: {
-        color: "rgb(60, 60, 60)",
+        //color: "rgb(60, 60, 60)",
+        color: theme.colors.primary,
         fontFamily: theme.fonts.primary,
         display: "flex",
         justifyContent: "space-around",
@@ -19,7 +21,7 @@ const useStyles = createUseStyles({
         fontWeight: 600,
         '& div:nth-child(3)': {
             fontSize: "1.7rem",
-            color: "rgb(60, 60, 60)",
+            color: theme.colors.primary,
             fontWeight: 800
         }
     }

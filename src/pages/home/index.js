@@ -3,7 +3,8 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import useStyles from './pageStyles';
 import { Observer } from 'gsap/Observer';
-import theme from '../../shared/styles/theme';
+import Image from "../../assets/image/asset.jpeg";
+import Image2 from "../../assets/image/asset3.jpeg";
 
 gsap.registerPlugin(useGSAP, Observer);
 
@@ -14,6 +15,8 @@ const Home = () => {
     const container = useRef();
     const titleContainer = useRef();
     const titleName = useRef();
+    const backgroundImage1 = useRef();
+    const backgroundImage2 = useRef();
 
     const titleText = "HOUSE of NAMOR";
     const letterArr = titleText.split("")
@@ -107,10 +110,29 @@ const Home = () => {
                 duration: 2,
             }, 1.5
         )
+        .fromTo(
+            backgroundImage1.current.querySelectorAll("img:nth-child(1), img:nth-child(2)"),
+            { 
+                opacity: 0,
+                filter: "grayscale(1)",
+            },
+            {
+                opacity: .4,
+                filter: "grayscale(0)",
+                stagger: { each: 1, from: "start" },
+                duration: 5
+            }
+        )
     }, { dependencies: [], scope: container });
 
     return (
         <div className={classes.container} ref={container}>
+            <div className={classes.womanImage} ref={backgroundImage1}>
+                <img src={Image} alt="woman in crochet dress" />
+                <img src={Image2} alt="woman in crochet dress" />
+            </div>
+            <div className={classes.womanImage} ref={backgroundImage2}>
+            </div>
             <div className={classes.titleContainer} ref={titleContainer}>
                 <div className={classes.titleAcronym} ref={titleAcronym}>
                     <div>H</div>
