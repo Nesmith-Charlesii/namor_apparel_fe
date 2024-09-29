@@ -5,6 +5,8 @@ import useStyles from './pageStyles';
 import { Observer } from 'gsap/Observer';
 import Image from "../../assets/image/asset.jpeg";
 import Image2 from "../../assets/image/asset3.jpeg";
+import Image3 from "../../assets/image/asset4.jpg";
+import Image4 from "../../assets/image/asset5.jpeg";
 
 gsap.registerPlugin(useGSAP, Observer);
 
@@ -15,8 +17,7 @@ const Home = () => {
     const container = useRef();
     const titleContainer = useRef();
     const titleName = useRef();
-    const backgroundImage1 = useRef();
-    const backgroundImage2 = useRef();
+    const backgroundImage = useRef();
 
     const titleText = "HOUSE of NAMOR";
     const letterArr = titleText.split("")
@@ -111,27 +112,29 @@ const Home = () => {
             }, 1.5
         )
         .fromTo(
-            backgroundImage1.current.querySelectorAll("img:nth-child(1), img:nth-child(2)"),
+            backgroundImage.current.querySelectorAll("img:nth-child(1), img:nth-child(2), img:nth-child(3), img:nth-child(4)"),
             { 
                 opacity: 0,
                 filter: "grayscale(1)",
+                transform: "rotateY(0deg)",
             },
             {
-                opacity: .4,
+                opacity: .3,
                 filter: "grayscale(0)",
-                stagger: { each: 1, from: "start" },
-                duration: 5
+                transform: "rotateY(165deg)",
+                stagger: { each: .2, from: "start" },
+                duration: 1
             }
         )
     }, { dependencies: [], scope: container });
 
     return (
         <div className={classes.container} ref={container}>
-            <div className={classes.womanImage} ref={backgroundImage1}>
+            <div className={classes.womanImage} ref={backgroundImage}>
                 <img src={Image} alt="woman in crochet dress" />
-                <img src={Image2} alt="woman in crochet dress" />
-            </div>
-            <div className={classes.womanImage} ref={backgroundImage2}>
+                <img src={Image2} alt="man in crochet shirt" />
+                <img src={Image3} alt="black woman in crochet dress" />
+                <img src={Image4} alt="black man in crochet shirt" />
             </div>
             <div className={classes.titleContainer} ref={titleContainer}>
                 <div className={classes.titleAcronym} ref={titleAcronym}>
