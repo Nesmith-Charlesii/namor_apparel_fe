@@ -3,10 +3,11 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import useStyles from './pageStyles';
 import { Observer } from 'gsap/Observer';
-import Image from "../../assets/image/asset.jpeg";
-import Image2 from "../../assets/image/asset3.jpeg";
-import Image3 from "../../assets/image/asset4.jpg";
-import Image4 from "../../assets/image/asset5.jpeg";
+// import Image from "../../assets/image/asset.jpeg";
+// import Image2 from "../../assets/image/asset3.jpeg";
+// import Image3 from "../../assets/image/asset4.jpg";
+// import Image4 from "../../assets/image/asset5.jpeg";
+// import Image5 from "../../assets/image/asset6.jpeg";
 
 gsap.registerPlugin(useGSAP, Observer);
 
@@ -17,7 +18,7 @@ const Home = () => {
     const container = useRef();
     const titleContainer = useRef();
     const titleName = useRef();
-    const backgroundImage = useRef();
+    //const backgroundImage = useRef();
 
     const titleText = "HOUSE of NAMOR";
     const letterArr = titleText.split("")
@@ -40,6 +41,7 @@ const Home = () => {
             {
                 opacity: 1,
                 filter: "blur(0px)",
+                textShadow: "4px 4px 4px rgb(30, 30, 30)",
                 transform: "rotateY(0deg)",
                 ease: "sine.inOut",
                 stagger: { each: 0.1, from: "random" },
@@ -57,6 +59,7 @@ const Home = () => {
             {   
                 y: 0,
                 opacity: 1,
+                textShadow: "4px 4px 4px rgb(30, 30, 30)",
                 duration: 2,
                 ease: "bounce.out",
                 yoyo: true,
@@ -83,6 +86,7 @@ const Home = () => {
             {   
                 y: 0,
                 opacity: 1,
+                textShadow: "4px 4px 4px rgb(30, 30, 30)",
                 duration: 2,
                 ease: "bounce.out",
                 yoyo: true,
@@ -107,35 +111,37 @@ const Home = () => {
 
                 filter: "blur(0px)",
                 opacity: 1,
+                textShadow: "4px 4px 4px rgb(30, 30, 30)",
                 stagger: { each: 0.3, from: "random" },
                 duration: 2,
             }, 1.5
         )
-        .fromTo(
-            backgroundImage.current.querySelectorAll("img:nth-child(1), img:nth-child(2), img:nth-child(3), img:nth-child(4)"),
-            { 
-                opacity: 0,
-                filter: "grayscale(1)",
-                transform: "rotateY(0deg)",
-            },
-            {
-                opacity: .3,
-                filter: "grayscale(0)",
-                transform: "rotateY(165deg)",
-                stagger: { each: .2, from: "start" },
-                duration: 1
-            }
-        )
+        // .fromTo(
+        //     backgroundImage.current.querySelectorAll("img:nth-child(1), img:nth-child(2), img:nth-child(3), img:nth-child(4), img:nth-child(5)"),
+        //     { 
+        //         opacity: 0,
+        //         filter: "grayscale(1)",
+        //         transform: "rotateY(0deg)",
+        //     },
+        //     {
+        //         opacity: .3,
+        //         filter: "grayscale(0)",
+        //         transform: "rotateY(170deg)",
+        //         stagger: { each: .2, from: "start" },
+        //         duration: 1
+        //     }
+        // )
     }, { dependencies: [], scope: container });
 
     return (
         <div className={classes.container} ref={container}>
-            <div className={classes.womanImage} ref={backgroundImage}>
+            {/* <div className={classes.womanImage} ref={backgroundImage}>
                 <img src={Image} alt="woman in crochet dress" />
                 <img src={Image2} alt="man in crochet shirt" />
                 <img src={Image3} alt="black woman in crochet dress" />
                 <img src={Image4} alt="black man in crochet shirt" />
-            </div>
+                <img src={Image5} alt="white woman in crochet shirt" />
+            </div> */}
             <div className={classes.titleContainer} ref={titleContainer}>
                 <div className={classes.titleAcronym} ref={titleAcronym}>
                     <div>H</div>

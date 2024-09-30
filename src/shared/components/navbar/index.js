@@ -13,30 +13,18 @@ const Navbar = () => {
         const tl = gsap.timeline()
 
         tl.fromTo(
-            navbarLinks.current.querySelectorAll("div:nth-child(1),div:nth-child(2),div:nth-child(4),div:nth-child(5)"),
+            navbarLinks.current.querySelectorAll("div:nth-child(1),div:nth-child(2),div:nth-child(3),div:nth-child(4), div:nth-child(5)"),
             { 
                 y: -50, 
                 opacity: 0,  
             },
             { 
                 y: 0, 
-                stagger: { each: 0.2, from: "random" }, 
+                stagger: { each: 0.2, from: "end" }, 
                 opacity: 1, 
                 duration: .5,
-                delay: 3
+                delay: 2
             }
-        )
-        .fromTo(
-            navbarLinks.current.querySelector("div:nth-child(3)"),
-            { 
-                opacity: 0, 
-            },
-            { 
-                stagger: { each: 0.2, from: "random" }, 
-                opacity: 1, 
-                duration: 0.5,
-                delay: 3
-            }, 1
         )
     })
 
@@ -44,10 +32,10 @@ const Navbar = () => {
         <div className={classes.navbar} ref={navbar}>
             <div className={classes.navLinks} ref={navbarLinks}>
                 <div>Home</div>
+                <div>Showcase</div>
                 <div>Shop</div>
-                <div>H.o.N</div>
                 <div>About</div>
-                <div>Contact</div>
+                <div>Inquire</div>
             </div>
         </div>
     )

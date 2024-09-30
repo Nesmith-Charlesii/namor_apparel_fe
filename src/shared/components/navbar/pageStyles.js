@@ -1,8 +1,9 @@
 import { createUseStyles } from "react-jss";
-import theme from "../../styles/theme";
+//import theme from "../../styles/theme";
 
 const useStyles = createUseStyles({
     navbar: {
+        height: "120px",
         position: "fixed",
         zIndex: 1,
         width: "100%",
@@ -11,19 +12,16 @@ const useStyles = createUseStyles({
     },
     navLinks: {
         //color: "rgb(60, 60, 60)",
-        color: theme.colors.primary,
-        fontFamily: theme.fonts.primary,
+        height: "100%",
+        color: "rgb(240, 240, 240)",
+        fontFamily: "sans-serif",
         display: "flex",
+        flexDirection: "column",
         justifyContent: "space-around",
-        alignItems: "center",
+        alignItems: "end",
+        marginRight: "85px",
         listStyleType: "none",
-        fontSize: "1.1rem",
-        fontWeight: 600,
-        '& div:nth-child(3)': {
-            fontSize: "1.7rem",
-            color: theme.colors.primary,
-            fontWeight: 800
-        }
+        fontSize: "16px",
     }
 })
 

@@ -55,7 +55,7 @@ const useStyles = createUseStyles({
     womanImage: {
         position: "absolute",
         height: "50%",
-        width: "100%",
+        // width: "100%",
         display: "flex"
     }
 });
