@@ -20,10 +20,10 @@ const Navbar = () => {
             },
             { 
                 y: 0, 
-                stagger: { each: 0.2, from: "end" }, 
+                stagger: { each: 0.1, from: "end" }, 
                 opacity: 1, 
                 duration: .5,
-                delay: 2
+                delay: 3
             }
         )
     })

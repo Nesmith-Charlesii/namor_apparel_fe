@@ -52,6 +52,9 @@ const useStyles = createUseStyles({
         marginTop: 0,
         marginBottom: 0,
     },
+    video: {
+        position: "absolute"
+    },
     womanImage: {
         position: "absolute",
         height: "50%",

@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import useStyles from './pageStyles';
 import { Observer } from 'gsap/Observer';
+import BackgroundVideo from '../../assets/video/background_vid.mp4';
 // import Image from "../../assets/image/asset.jpeg";
 // import Image2 from "../../assets/image/asset3.jpeg";
 // import Image3 from "../../assets/image/asset4.jpg";
@@ -18,6 +19,7 @@ const Home = () => {
     const container = useRef();
     const titleContainer = useRef();
     const titleName = useRef();
+    const backgroundVid = useRef();
     //const backgroundImage = useRef();
 
     const titleText = "HOUSE of NAMOR";
@@ -41,7 +43,6 @@ const Home = () => {
             {
                 opacity: 1,
                 filter: "blur(0px)",
-                textShadow: "4px 4px 4px rgb(30, 30, 30)",
                 transform: "rotateY(0deg)",
                 ease: "sine.inOut",
                 stagger: { each: 0.1, from: "random" },
@@ -59,7 +60,6 @@ const Home = () => {
             {   
                 y: 0,
                 opacity: 1,
-                textShadow: "4px 4px 4px rgb(30, 30, 30)",
                 duration: 2,
                 ease: "bounce.out",
                 yoyo: true,
@@ -86,7 +86,6 @@ const Home = () => {
             {   
                 y: 0,
                 opacity: 1,
-                textShadow: "4px 4px 4px rgb(30, 30, 30)",
                 duration: 2,
                 ease: "bounce.out",
                 yoyo: true,
@@ -111,10 +110,14 @@ const Home = () => {
 
                 filter: "blur(0px)",
                 opacity: 1,
-                textShadow: "4px 4px 4px rgb(30, 30, 30)",
                 stagger: { each: 0.3, from: "random" },
                 duration: 2,
             }, 1.5
+        )
+        .fromTo(
+            backgroundVid.current,
+            { opacity: .1 },
+            { opacity: .1, duration: 3 }, "-=1"
         )
         // .fromTo(
         //     backgroundImage.current.querySelectorAll("img:nth-child(1), img:nth-child(2), img:nth-child(3), img:nth-child(4), img:nth-child(5)"),
@@ -135,6 +138,11 @@ const Home = () => {
 
     return (
         <div className={classes.container} ref={container}>
+            <div className={classes.video} ref={backgroundVid}>
+                <video autoPlay muted>
+                    <source src={BackgroundVideo} type="video/mp4"/>
+                </video>
+            </div>
             {/* <div className={classes.womanImage} ref={backgroundImage}>
                 <img src={Image} alt="woman in crochet dress" />
                 <img src={Image2} alt="man in crochet shirt" />

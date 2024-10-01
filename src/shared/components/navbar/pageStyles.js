@@ -14,7 +14,7 @@ const useStyles = createUseStyles({
         //color: "rgb(60, 60, 60)",
         height: "100%",
         color: "rgb(240, 240, 240)",
-        fontFamily: "sans-serif",
+        fontFamily: "Courier New",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-around",
