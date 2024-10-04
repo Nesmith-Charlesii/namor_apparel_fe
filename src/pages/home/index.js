@@ -20,7 +20,6 @@ const Home = () => {
     const titleContainer = useRef();
     const titleName = useRef();
     const backgroundVid = useRef();
-    //const backgroundImage = useRef();
 
     const titleText = "HOUSE of NAMOR";
     const letterArr = titleText.split("")
@@ -114,6 +113,7 @@ const Home = () => {
                 duration: 2,
             }, 1.5
         )
+        // Background Video
         .fromTo(
             backgroundVid.current,
             { opacity: 0 },

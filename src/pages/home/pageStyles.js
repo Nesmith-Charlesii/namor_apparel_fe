@@ -62,13 +62,20 @@ const useStyles = createUseStyles({
         zIndex: 1,
         display: "flex",
         border: "1px solid rgba(255, 0, 0, .2)",
-        height: "100%"
+        height: "100%",
+        width: "100%"
     },
     backgroundOverlay1: {
-        position: "absolute"
+        position: "relative",
+        height: "100%",
+        width: "100%",
+        backgroundColor: "rgb(20, 20, 20)"
     },
     backgroundOverlay2: {
-        position: "absolute"
+        position: "relative",
+        height: "100%",
+        width: "100%",
+        backgroundColor: "rgb(20, 20, 20)"
     }
 });
 
