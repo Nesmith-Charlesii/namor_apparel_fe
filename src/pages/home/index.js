@@ -33,7 +33,7 @@ const Home = () => {
             { x: -120, opacity: 0 },
             { x: 0, opacity: 1, duration: 2, ease: "power1.inOut" }, 0
         )
-        tl.fromTo(
+        .fromTo(
             ".letter",
             {
                 opacity: 0,
@@ -54,7 +54,7 @@ const Home = () => {
             titleAcronym.current.querySelector("div:nth-child(2)"),
             {
                 opacity: 0,
-                y: -500,
+                y: -700,
                 filter: "blur(10px)",
             }, 
             {   
@@ -80,7 +80,7 @@ const Home = () => {
             titleAcronym.current.querySelector("div:nth-child(4)"),
             {
                 opacity: 0,
-                y: -420,
+                y: -620,
                 filter: "blur(10px)",
             }, 
             {   
@@ -116,40 +116,18 @@ const Home = () => {
         )
         .fromTo(
             backgroundVid.current,
-            { opacity: .1 },
-            { opacity: .1, duration: 3 }, "-=1"
+            { opacity: 0 },
+            { opacity: .3, duration: 3 }, "-=1"
         )
-        // .fromTo(
-        //     backgroundImage.current.querySelectorAll("img:nth-child(1), img:nth-child(2), img:nth-child(3), img:nth-child(4), img:nth-child(5)"),
-        //     { 
-        //         opacity: 0,
-        //         filter: "grayscale(1)",
-        //         transform: "rotateY(0deg)",
-        //     },
-        //     {
-        //         opacity: .3,
-        //         filter: "grayscale(0)",
-        //         transform: "rotateY(170deg)",
-        //         stagger: { each: .2, from: "start" },
-        //         duration: 1
-        //     }
-        // )
     }, { dependencies: [], scope: container });
 
     return (
         <div className={classes.container} ref={container}>
             <div className={classes.video} ref={backgroundVid}>
-                <video autoPlay muted>
+                <video autoPlay muted loop>
                     <source src={BackgroundVideo} type="video/mp4"/>
                 </video>
             </div>
-            {/* <div className={classes.womanImage} ref={backgroundImage}>
-                <img src={Image} alt="woman in crochet dress" />
-                <img src={Image2} alt="man in crochet shirt" />
-                <img src={Image3} alt="black woman in crochet dress" />
-                <img src={Image4} alt="black man in crochet shirt" />
-                <img src={Image5} alt="white woman in crochet shirt" />
-            </div> */}
             <div className={classes.titleContainer} ref={titleContainer}>
                 <div className={classes.titleAcronym} ref={titleAcronym}>
                     <div>H</div>

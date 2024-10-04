@@ -20,8 +20,8 @@ const Navbar = () => {
             },
             { 
                 y: 0, 
-                stagger: { each: 0.1, from: "end" }, 
-                opacity: 1, 
+                stagger: { each: 0.2, from: "start" }, 
+                opacity: .5, 
                 duration: .5,
                 delay: 3
             }
@@ -31,11 +31,11 @@ const Navbar = () => {
     return (
         <div className={classes.navbar} ref={navbar}>
             <div className={classes.navLinks} ref={navbarLinks}>
-                <div>Home</div>
-                <div>Showcase</div>
-                <div>Shop</div>
-                <div>About</div>
-                <div>Inquire</div>
+                <div>HOME</div>
+                <div>SHOWCASE</div>
+                <div>SHOP</div>
+                <div>ABOUT</div>
+                <div>INQUIRE</div>
             </div>
         </div>
     )

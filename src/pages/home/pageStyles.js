@@ -17,6 +17,7 @@ const useStyles = createUseStyles({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        marginLeft: "40px",
         fontFamily: theme.fonts.primary,
         //color: "rgb(60, 60, 60)",
         color: theme.colors.primary,
@@ -53,13 +54,7 @@ const useStyles = createUseStyles({
         marginBottom: 0,
     },
     video: {
-        position: "absolute"
-    },
-    womanImage: {
         position: "absolute",
-        height: "50%",
-        // width: "100%",
-        display: "flex"
     }
 });
 

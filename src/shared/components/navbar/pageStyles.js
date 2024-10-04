@@ -3,25 +3,27 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
     navbar: {
-        height: "120px",
+        height: "100px",
         position: "fixed",
+        display: "flex",
+        alignItems: "center",
         zIndex: 1,
         width: "100%",
-        backgroundColor: "transparent",
-        padding: "40px 0px 0px 0px"
+        backgroundColor: "transparent"
     },
     navLinks: {
         //color: "rgb(60, 60, 60)",
-        height: "100%",
+        width: "100%",
         color: "rgb(240, 240, 240)",
         fontFamily: "Courier New",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-        alignItems: "end",
-        marginRight: "85px",
+        justifyContent: "space-between",
+        alignItems: "center",
         listStyleType: "none",
-        fontSize: "16px",
+        fontSize: "1rem",
+        fontWeight: 600
+,       padding: "0px 80px",
+        letterSpacing: "2px"
     }
 })
 
