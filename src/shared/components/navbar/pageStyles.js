@@ -7,7 +7,7 @@ const useStyles = createUseStyles({
         position: "fixed",
         display: "flex",
         alignItems: "center",
-        zIndex: 1,
+        zIndex: 2,
         width: "100%",
         backgroundColor: "transparent"
     },

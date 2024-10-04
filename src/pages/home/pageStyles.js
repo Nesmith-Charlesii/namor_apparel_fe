@@ -17,7 +17,7 @@ const useStyles = createUseStyles({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        marginLeft: "40px",
+        marginLeft: "41px",
         fontFamily: theme.fonts.primary,
         //color: "rgb(60, 60, 60)",
         color: theme.colors.primary,
@@ -55,6 +55,20 @@ const useStyles = createUseStyles({
     },
     video: {
         position: "absolute",
+        zIndex: 0
+    },
+    backgroundOverlay: {
+        position: "absolute",
+        zIndex: 1,
+        display: "flex",
+        border: "1px solid rgba(255, 0, 0, .2)",
+        height: "100%"
+    },
+    backgroundOverlay1: {
+        position: "absolute"
+    },
+    backgroundOverlay2: {
+        position: "absolute"
     }
 });
 

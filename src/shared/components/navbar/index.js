@@ -23,7 +23,7 @@ const Navbar = () => {
                 stagger: { each: 0.2, from: "start" }, 
                 opacity: .5, 
                 duration: .5,
-                delay: 3
+                delay: 3.5
             }
         )
     })

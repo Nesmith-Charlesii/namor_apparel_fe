@@ -117,12 +117,16 @@ const Home = () => {
         .fromTo(
             backgroundVid.current,
             { opacity: 0 },
-            { opacity: .3, duration: 3 }, "-=1"
+            { opacity: .3, duration: 3 }
         )
     }, { dependencies: [], scope: container });
 
     return (
         <div className={classes.container} ref={container}>
+            <div className={classes.backgroundOverlay}>
+                <div className={classes.backgroundOverlay1}></div>
+                <div className={classes.backgroundOverlay2}></div>
+            </div>
             <div className={classes.video} ref={backgroundVid}>
                 <video autoPlay muted loop>
                     <source src={BackgroundVideo} type="video/mp4"/>
