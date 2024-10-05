@@ -20,6 +20,8 @@ const Home = () => {
     const titleContainer = useRef();
     const titleName = useRef();
     const backgroundVid = useRef();
+    const overlay1 = useRef();
+    const overlay2 = useRef();
 
     const titleText = "HOUSE of NAMOR";
     const letterArr = titleText.split("")
@@ -119,13 +121,21 @@ const Home = () => {
             { opacity: 0 },
             { opacity: .3, duration: 3 }
         )
+        .to(
+            overlay1.current,
+            { y: window.innerHeight, duration: 1 }, "-=3"
+        )
+        .to(
+            overlay2.current,
+            { y: -window.innerHeight, duration: 1 }, "-=2.8"
+        )
     }, { dependencies: [], scope: container });
 
     return (
         <div className={classes.container} ref={container}>
             <div className={classes.backgroundOverlay}>
-                <div className={classes.backgroundOverlay1}></div>
-                <div className={classes.backgroundOverlay2}></div>
+                <div className={classes.backgroundOverlay1} ref={overlay1}></div>
+                <div className={classes.backgroundOverlay2} ref={overlay2}></div>
             </div>
             <div className={classes.video} ref={backgroundVid}>
                 <video autoPlay muted loop>
