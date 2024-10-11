@@ -46,7 +46,7 @@ const Home = () => {
                 filter: "blur(0px)",
                 transform: "rotateY(0deg)",
                 ease: "sine.inOut",
-                stagger: { each: 0.1, from: "random" },
+                stagger: { each: 0.1, from: "end" },
                 duration: 2.5,
             }, 0
         )
@@ -61,7 +61,7 @@ const Home = () => {
             {   
                 y: 0,
                 opacity: 1,
-                duration: 2,
+                duration: 2.5,
                 ease: "bounce.out",
                 yoyo: true,
                 stagger: { each: 0.2, from: "random" },
@@ -87,7 +87,7 @@ const Home = () => {
             {   
                 y: 0,
                 opacity: 1,
-                duration: 2,
+                duration: 2.5,
                 ease: "bounce.out",
                 yoyo: true,
                 stagger: { each: 0.2, from: "random" },
@@ -112,7 +112,7 @@ const Home = () => {
                 filter: "blur(0px)",
                 opacity: 1,
                 stagger: { each: 0.3, from: "random" },
-                duration: 2,
+                duration: 2.5,
             }, 1.5
         )
         // Background Video

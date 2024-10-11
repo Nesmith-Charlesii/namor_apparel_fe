@@ -4,7 +4,7 @@ import { createUseStyles } from "react-jss";
 const useStyles = createUseStyles({
     navBar: {
         position: "fixed",
-        height: "80px",
+        height: "115px",
         width: "100%",
         display: "flex",
         alignItems: 'center',
@@ -19,19 +19,34 @@ const useStyles = createUseStyles({
         padding: "0px 80px"
     },
     navIcon: {
-        height: "50px",
+        height: "55px",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-evenly"
+        justifyContent: "space-evenly",
+        transition: "transform 300ms ease",
+        '&:hover': {
+            cursor: "pointer",
+            transform: "scale(1.05)",
+        }
     },
     navLogo: {
-        color: "rgb(240, 240, 240)"
+        opacity: 0,
+        color: "rgb(240, 240, 240)",
     },
     navLine: {
         height: ".5px",
         width: "50px",
         backgroundColor: "rgb(240, 240, 240)"
     },
+    navMenu: {
+        display: 'flex'
+    },
+    leftImage: {
+
+    },
+    rightMenu: {
+
+    }
 //     navbar: {
 //         height: "100px",
 //         position: "fixed",

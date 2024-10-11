@@ -24,7 +24,7 @@ const useStyles = createUseStyles({
     },
     titleAcronym: {
         display: "flex",
-        fontSize: "12rem",
+        fontSize: "9rem",
         letterSpacing: 44,
         marginTop: 0,
         marginBottom: 0,
@@ -48,7 +48,7 @@ const useStyles = createUseStyles({
         display: "flex",
         flexDirection: "row",
         fontWeight: 600,
-        fontSize: "4rem",
+        fontSize: "2.5rem",
         letterSpacing: 24,
         marginTop: 0,
         marginBottom: 0,
