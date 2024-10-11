@@ -119,7 +119,7 @@ const Home = () => {
         .fromTo(
             backgroundVid.current,
             { opacity: 0 },
-            { opacity: .3, duration: 3 }
+            { opacity: .5, duration: 3 }
         )
         .to(
             overlay1.current,
