@@ -127,7 +127,7 @@ const Home = () => {
         )
         .to(
             overlay2.current,
-            { y: -window.innerHeight - 200, duration: 1 }, "-=2.8"
+            { y: -window.innerHeight - 200, duration: 2 }, "-=2.8"
         )
     }, { dependencies: [], scope: container });
 
