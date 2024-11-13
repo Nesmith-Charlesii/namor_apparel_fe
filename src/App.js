@@ -1,19 +1,35 @@
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route, /*Link*/ } from 'react-router-dom';
 import Navbar from './shared/components/navbar';
 import Home from './pages/home';
 import Shop from './pages/shop';
+import ComingSoon from './pages/coming_soon';
 
 function App() {
+  const [temp, setTemp] = useState(false); 
+  
   return (
     <>
-    <Navbar />
-      <Router>
+    {
+      temp &&
+      <Navbar />
+    }
+    <Router>
+      {
+        temp &&
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/shop" element={<Shop/>} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/shop" element={<Shop/>} />
         </Routes>
-      </Router>
-    </>
+      }
+      {
+        !temp &&
+        <Routes>
+          <Route path="/" element={<ComingSoon/>} />
+        </Routes>
+      }
+    </Router>
+  </>
   );
 }
 
