@@ -2,15 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import useStyles from './pageStyles';
-import { Observer } from 'gsap/Observer';
 import BackgroundVideo from '../../assets/video/background_vid.mp4';
-// import Image from "../../assets/image/asset.jpeg";
-// import Image2 from "../../assets/image/asset3.jpeg";
-// import Image3 from "../../assets/image/asset4.jpg";
-// import Image4 from "../../assets/image/asset5.jpeg";
-// import Image5 from "../../assets/image/asset6.jpeg";
-
-gsap.registerPlugin(useGSAP, Observer);
 
 const Home = () => {
     const classes = useStyles();
