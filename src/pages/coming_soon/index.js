@@ -26,9 +26,14 @@ const ComingSoon = () => {
             { 
                 opacity: 0,
                 yPercent: -200, 
-                rotatex: "270deg", 
-                stagger: { each: 0.1, from: "start" }, 
-                duration: .7 
+                stagger: { each: 0.1, from: "random" }
+            }, 0
+        )
+
+        tl.from('#honLogo .period', 
+            {
+                scale: 0,
+                stagger: { each: 0.5, from: "end" }
             }, 0
         )
 
