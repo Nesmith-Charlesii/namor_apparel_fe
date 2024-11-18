@@ -9,6 +9,7 @@ const ComingSoon = () => {
 
     const containerRef = useRef()
     const logoRef = useRef()
+    const comingSoonRef = useRef()
 
     useGSAP(() => {
         const tl = gsap.timeline()
@@ -18,8 +19,9 @@ const ComingSoon = () => {
         })
 
         tl.to('svg', {
-            scale: 1.2,
-            duration: 4
+            scale: 1.3,
+            duration: 3,
+            ease: "sine.inOut"
         })
 
         tl.from('#honLogo .acro',
@@ -47,6 +49,16 @@ const ComingSoon = () => {
             }, 0
         )
 
+        tl.fromTo(comingSoonRef.current,
+            {
+                opacity: 0,
+            },
+            {
+                opacity: .3,
+                duration: 2
+            }, "-=2"
+        )
+
         tl.to('#honLogo path',
             {
                 fill: "rgb(235,235,235)",
@@ -62,23 +74,23 @@ const ComingSoon = () => {
         tl.to('#honLogo path',
             {
                 opacity: 0.5,
-                yPercent: -200,
-                scaleY: 0,
-                filter: "blur(10px)",
+                filter: "blur(5px)",
                 stagger: { each: .09, from: "random" },
                 repeat: -1,
-                repeatDelay: 2,
+                repeatDelay: .2,
                 yoyo: true,
-                ease: "power2.in"
-            }, "+=2"
+                ease: "power2.inOut"
+            }, "-=2"
         )
 
     }, { dependencies: [], scope: containerRef })
 
     return (
         <div className={classes.container} ref={containerRef}>
-            <div>
-                <Logo ref={logoRef} />
+            <Logo className={classes.logo} ref={logoRef} />
+            <div className={classes.comingSoon} ref={comingSoonRef}>
+                <p>COMING</p>
+                <p>SOON</p>         
             </div>
         </div>
     )
