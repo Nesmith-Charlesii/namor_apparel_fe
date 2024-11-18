@@ -19,7 +19,7 @@ const ComingSoon = () => {
         })
 
         tl.to('svg', {
-            scale: 1.3,
+            scale: 1.2,
             duration: 3,
             ease: "sine.inOut"
         })
@@ -29,7 +29,9 @@ const ComingSoon = () => {
                 opacity: 0,
                 yPercent: 215,
                 scaleY: .5,
-                stagger: { each: .4, from: "start" },
+                skewY: 60,
+                skewX: 30,
+                stagger: { each: .4, from: "end" },
             }, 0
         )
 
@@ -37,7 +39,7 @@ const ComingSoon = () => {
             {
                 filter: "blur(10px)",
                 scale: 0,
-                stagger: { each: .4, from: "start" }
+                stagger: { each: .3, from: "start" },
             }, 0
         )
 
@@ -81,6 +83,17 @@ const ComingSoon = () => {
                 yoyo: true,
                 ease: "power2.inOut"
             }, "-=2"
+        )
+
+        tl.to(containerRef.current,
+            {
+                backgroundColor: "#D7AD80",
+                duration: 5,
+                repeat: -1,
+                repeatDelay: 8,
+                yoyo: true,
+                yoyoEase: "power1.inOut"
+            }, "-=1"
         )
 
     }, { dependencies: [], scope: containerRef })
