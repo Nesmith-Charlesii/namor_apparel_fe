@@ -26,10 +26,8 @@ const ComingSoon = () => {
             {
                 opacity: 0,
                 yPercent: 215,
-                // skewY: 60,
-                // skewX: 30,
                 scaleY: .5,
-                stagger: { each: .4, from: "end" }
+                stagger: { each: .4, from: "start" },
             }, 0
         )
 
@@ -45,11 +43,35 @@ const ComingSoon = () => {
             {
                 opacity: 0,
                 yPercent: -200, 
-                stagger: { each: 0.09, from: "end" }
+                stagger: { each: 0.09, from: "end" },
             }, 0
         )
 
+        tl.to('#honLogo path',
+            {
+                fill: "rgb(235,235,235)",
+                stagger: { each: .09, from: "random" },
+                repeat: -1,
+                yoyo: true,
+                yoyoEase: "power1.inOut",
+                repeatDelay: 5,
+                ease: "power2.inOut"
+            }, "+=2"
+        )
 
+        tl.to('#honLogo path',
+            {
+                opacity: 0.5,
+                yPercent: -200,
+                scaleY: 0,
+                filter: "blur(10px)",
+                stagger: { each: .09, from: "random" },
+                repeat: -1,
+                repeatDelay: 2,
+                yoyo: true,
+                ease: "power2.in"
+            }, "+=2"
+        )
 
     }, { dependencies: [], scope: containerRef })
 
