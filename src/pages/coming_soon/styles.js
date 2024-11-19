@@ -6,7 +6,7 @@ const useStyles = createUseStyles({
         position: "relative",
         height: "100vh",
         width: "100vw",
-        backgroundColor: "#EBCCAB",
+        backgroundColor: "white",
         display: "grid",
         placeItems: "center",
         overflow: "hidden"
@@ -21,6 +21,7 @@ const useStyles = createUseStyles({
         height: "auto"
     },
     comingSoon: {
+        color: "#E0D2BB",
         position: 'absolute',
         display: "flex",
         flexDirection: "column",
@@ -31,7 +32,6 @@ const useStyles = createUseStyles({
         fontFamily: theme.fonts.primary,
         fontWeight: 600,
         letterSpacing: 20,
-        filter: "drop-shadow(4px 4px 6px rgb(25,25,25))",
         '& p:nth-child(1)': {
             marginBottom: "0px"
         },

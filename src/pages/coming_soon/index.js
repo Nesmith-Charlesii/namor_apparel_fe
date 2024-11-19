@@ -21,11 +21,12 @@ const ComingSoon = () => {
         tl.to('svg', {
             scale: 1.2,
             duration: 3,
-            ease: "sine.inOut"
+            ease: "sine.out"
         })
 
         tl.from('#honLogo .acro',
             {
+                filter: "blur(10px)",
                 opacity: 0,
                 yPercent: 215,
                 scaleY: .5,
@@ -45,6 +46,7 @@ const ComingSoon = () => {
 
         tl.from('#honLogo .st1',
             {
+                filter: "blur(10px)",
                 opacity: 0,
                 yPercent: -200, 
                 stagger: { each: 0.09, from: "end" },
@@ -56,44 +58,26 @@ const ComingSoon = () => {
                 opacity: 0,
             },
             {
-                opacity: .3,
-                duration: 2
-            }, "-=2"
+                opacity: .5,
+                duration: 2,
+                repeat: -1,
+                repeatDelay: 1,
+                yoyo: true,
+                yoyoEase: "sine.out",
+                ease: "sine.out"
+            }, 
         )
 
         tl.to('#honLogo path',
             {
-                fill: "rgb(235,235,235)",
+                opacity: 0.7,
+                filter: "blur(2px)",
                 stagger: { each: .09, from: "random" },
                 repeat: -1,
+                repeatDelay: 1,
                 yoyo: true,
-                yoyoEase: "power1.inOut",
-                repeatDelay: 5,
-                ease: "power2.inOut"
-            }, "+=2"
-        )
-
-        tl.to('#honLogo path',
-            {
-                opacity: 0.5,
-                filter: "blur(5px)",
-                stagger: { each: .09, from: "random" },
-                repeat: -1,
-                repeatDelay: .2,
-                yoyo: true,
-                ease: "power2.inOut"
-            }, "-=2"
-        )
-
-        tl.to(containerRef.current,
-            {
-                backgroundColor: "#D7AD80",
-                duration: 5,
-                repeat: -1,
-                repeatDelay: 8,
-                yoyo: true,
-                yoyoEase: "power1.inOut"
-            }, "-=1"
+                ease: "sine.out"
+            }, 
         )
 
     }, { dependencies: [], scope: containerRef })
