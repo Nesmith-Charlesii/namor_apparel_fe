@@ -3,7 +3,7 @@ import theme from "../../shared/styles/theme";
 
 const useStyles = createUseStyles({
     container: {
-        backgroundColor: "#F5F5F5",
+        backgroundColor: "#fffeff",
         height: "100vh",
         display: "flex",
         justifyContent: "center",
@@ -69,15 +69,25 @@ const useStyles = createUseStyles({
         width: "100%",
         display: "flex",
         justifyContent: "space-around",
-        alignItems: "center"
+        alignItems: "center",
     },
     insta: {
+        position: "relative",
         height: "68px",
-        bottom: "0px"
+        bottom: "0px",
+        transition: "bottom 0.4s ease",
+        '&:hover': {
+            bottom: "10px"
+        }
     },
     tiktok: {
+        position: "relative",
         height: "90px",
-        bottom: "0px"
+        bottom: "0px",
+        transition: "bottom 0.4s ease",
+        '&:hover': {
+            bottom: "10px"
+        }
     }
 })
 

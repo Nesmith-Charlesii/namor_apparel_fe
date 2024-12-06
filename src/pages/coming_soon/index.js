@@ -20,6 +20,9 @@ const ComingSoon = () => {
     const instaRef = useRef();
     const tiktokRef = useRef();
 
+    const tikTokLink = "https://www.tiktok.com/@house_of_namor"
+    const instaLink = "https://www.instagram.com/house_of_namor/"
+
     useGSAP(() => {
         const tl = gsap.timeline()
 
@@ -80,7 +83,7 @@ const ComingSoon = () => {
                 opacity: .3,
                 duration: 1,
                 ease: "sine.in",
-            }, "-=.5"
+            }, 
         );
 
         tl.to(
@@ -129,10 +132,22 @@ const ComingSoon = () => {
         tl.to('.letter',
             {
                 opacity: 1,
-                filter: "blur(1px)",
-                stagger: { each: .06, from: "random" },
+                filter: "drop-shadow(2px 10px 5px grey)",
+                stagger: { each: .09, from: "random" },
                 repeat: -1,
-                repeatDelay: 1,
+                repeatDelay: 2,
+                yoyo: true,
+                ease: "sine.out"
+            }
+        )
+
+        tl.to(titleAcronym.current.querySelectorAll("div:nth-child(1), div:nth-child(3), div:nth-child(5)"),
+            {
+                opacity: 1,
+                filter: "drop-shadow(2px 10px 5px grey)",
+                stagger: { each: .1, from: "random" },
+                repeat: -1,
+                repeatDelay: 2,
                 yoyo: true,
                 ease: "sine.out"
             }
@@ -163,10 +178,14 @@ const ComingSoon = () => {
                 <div className={classes.comingSoon} ref={soonRef}>SOON</div>
                 <div className={classes.socials}>
                     <div>  
-                        <img src={TikTok} alt="social-tiktok" className={classes.tiktok} ref={tiktokRef}/> 
+                        <a href={tikTokLink} target='_blank' rel="noreferrer">
+                            <img src={TikTok} alt="social-tiktok" className={classes.tiktok} ref={tiktokRef} /> 
+                        </a>
                     </div>
                     <div> 
-                        <img src={Insta} alt="social-insta" className={classes.insta} ref={instaRef}/>
+                        <a href={instaLink} target='_blank' rel="noreferrer">
+                            <img src={Insta} alt="social-insta" className={classes.insta} ref={instaRef}/>
+                        </a>
                     </div>
                 </div>
             </div>
