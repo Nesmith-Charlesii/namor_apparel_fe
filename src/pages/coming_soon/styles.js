@@ -11,13 +11,13 @@ const useStyles = createUseStyles({
         margin: 0
     },
     pageContent: {
-        // opacity: 1,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
     },
     comingSoon: {
+        opacity: 1,
         color: "#E0D2BB",
         fontSize: "100px",
         fontFamily: theme.fonts.primary,
@@ -31,7 +31,6 @@ const useStyles = createUseStyles({
         alignItems: "center",
         marginLeft: "41px",
         fontFamily: theme.fonts.primary,
-        //color: "rgb(60, 60, 60)",
         color: "rgb(85, 85, 85)"
     },
     titleAcronym: {
@@ -55,6 +54,15 @@ const useStyles = createUseStyles({
         '& div:nth-child(5)': {
             opacity: 1
         }
+    },
+    titleName: {
+        display: "flex",
+        flexDirection: "row",
+        fontWeight: 600,
+        fontSize: "2.5rem",
+        letterSpacing: 24,
+        marginTop: 0,
+        marginBottom: 0,
     },
 })
 
