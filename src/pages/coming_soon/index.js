@@ -14,7 +14,8 @@ const ComingSoon = () => {
     const titleContainer = useRef();
     const titleAcronym = useRef();
     const titleName = useRef();
-    const comingSoonRef = useRef()
+    const comingRef = useRef()
+    const soonRef = useRef()
 
     useGSAP(() => {
         const tl = gsap.timeline()
@@ -23,23 +24,24 @@ const ComingSoon = () => {
             autoAlpha: 1
         })
 
-        tl.to(titleContainer.current, 
-            {
-                scale: 1.2,
-                duration: 8,
-                ease: "sine.inOut",
-            }, 0
-        )
+        // tl.to(titleContainer.current, 
+        //     {
+        //         scale: 1.2,
+        //         duration: 4,
+        //         ease: "expo.inOut",
+        //     }, 0
+        // )
 
         tl.from(titleAcronym.current.querySelectorAll("div:nth-child(1), div:nth-child(3), div:nth-child(5)"),
             {
                 filter: "blur(10px)",
                 opacity: 0,
-                yPercent: 215,
+                yPercent: 90,
                 scaleY: .5,
                 skewY: 60,
                 skewX: 30,
-                stagger: { each: .45, from: "end" },
+                stagger: { each: .5, from: "end" },
+                delay: 1
             }, 0
         )
 
@@ -47,13 +49,15 @@ const ComingSoon = () => {
             {
                 filter: "blur(10px)",
                 scale: 0,
+                delay: 1
             }, 0.7
         )
 
         tl.from(titleAcronym.current.querySelector("div:nth-child(4)"),
         {
             filter: "blur(10px)",
-            scale: 0
+            scale: 0,
+            delay: 1
         }, 0.2
     )
 
@@ -62,14 +66,24 @@ const ComingSoon = () => {
                 filter: "blur(10px)",
                 opacity: 0,
                 yPercent: -200, 
-                stagger: { each: 0.1, from: "end" },
+                stagger: { each: 0.09, from: "end" },
+                delay: 1
             }, 0
         )
 
         tl.to(
-            comingSoonRef.current,
+            comingRef.current,
             {
-                opacity: 1,
+                opacity: .3,
+                duration: 2,
+                ease: "sine.in",
+            }, 
+        );
+
+        tl.to(
+            soonRef.current,
+            {
+                opacity: 0.3,
                 duration: 2,
                 ease: "sine.in",
             }, "-=1"
@@ -78,10 +92,10 @@ const ComingSoon = () => {
         tl.to('.letter',
             {
                 opacity: 1,
-                filter: "blur(2px)",
+                filter: "blur(4px)",
                 stagger: { each: .06, from: "random" },
                 repeat: -1,
-                repeatDelay: 2,
+                repeatDelay: 1,
                 yoyo: true,
                 ease: "sine.out"
             }
@@ -92,7 +106,7 @@ const ComingSoon = () => {
     return (
         <div className={classes.container} ref={containerRef}>
             <div className={classes.pageContent}>
-                <h2 className={classes.comingSoon} ref={comingSoonRef}>COMING</h2>
+                <div className={classes.comingSoon} ref={comingRef}>COMING</div>
                 <div className={classes.titleContainer} ref={titleContainer}>
                     <div className={classes.titleAcronym} ref={titleAcronym}>
                         <div>H</div>
@@ -109,7 +123,7 @@ const ComingSoon = () => {
                     }
                     </div>
                 </div>
-                <h2 className={classes.comingSoon}>SOON</h2>
+                <div className={classes.comingSoon} ref={soonRef}>SOON</div>
             </div>
         </div>
     )

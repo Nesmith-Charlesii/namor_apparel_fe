@@ -3,6 +3,7 @@ import theme from "../../shared/styles/theme";
 
 const useStyles = createUseStyles({
     container: {
+        backgroundColor: "#F5F5F5",
         height: "100vh",
         display: "flex",
         justifyContent: "center",
@@ -17,27 +18,25 @@ const useStyles = createUseStyles({
         alignItems: "center",
     },
     comingSoon: {
-        opacity: 1,
-        color: "#E0D2BB",
-        fontSize: "100px",
+        opacity: 0,
+        color: "#a97c4b",
+        fontSize: "11rem",
         fontFamily: theme.fonts.primary,
-        fontWeight: 600
     },
     titleContainer: {
-        zIndex: 1,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         marginLeft: "41px",
         fontFamily: theme.fonts.primary,
-        color: "rgb(85, 85, 85)"
+        color: "rgb(93, 93, 93)"
     },
     titleAcronym: {
         display: "flex",
-        fontSize: "9rem",
+        fontSize: "11rem",
         letterSpacing: 44,
-        marginTop: 0,
+        marginTop: 20,
         marginBottom: 0,
         '& div:nth-child(1)': {
             opacity: 1
@@ -59,10 +58,10 @@ const useStyles = createUseStyles({
         display: "flex",
         flexDirection: "row",
         fontWeight: 600,
-        fontSize: "2.5rem",
+        fontSize: "2.8rem",
         letterSpacing: 24,
         marginTop: 0,
-        marginBottom: 0,
+        marginBottom: 60,
     },
 })
 
