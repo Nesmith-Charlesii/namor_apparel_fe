@@ -2,7 +2,8 @@ import React, { useRef } from 'react';
 import useStyles from './styles';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ReactComponent as Logo } from '../../assets/image/pathVector.svg';
+import Insta from '../../assets/image/insta_logo_icon.png';
+import TikTok from '../../assets/image/tok_tiktok_icon2.png';
 
 const ComingSoon = () => {
     const classes = useStyles()
@@ -14,8 +15,10 @@ const ComingSoon = () => {
     const titleContainer = useRef();
     const titleAcronym = useRef();
     const titleName = useRef();
-    const comingRef = useRef()
-    const soonRef = useRef()
+    const comingRef = useRef();
+    const soonRef = useRef();
+    const instaRef = useRef();
+    const tiktokRef = useRef();
 
     useGSAP(() => {
         const tl = gsap.timeline()
@@ -75,24 +78,58 @@ const ComingSoon = () => {
             comingRef.current,
             {
                 opacity: .3,
-                duration: 2,
+                duration: 1,
                 ease: "sine.in",
-            }, 
+            }, "-=.5"
         );
 
         tl.to(
             soonRef.current,
             {
-                opacity: 0.3,
-                duration: 2,
+                opacity: .3,
+                duration: 1,
                 ease: "sine.in",
-            }, "-=1"
+            }, "-=.5"
         );
+
+        tl.from(tiktokRef.current,
+            {
+                opacity: 0,
+                y: 400
+            }
+        )
+
+        tl.from(instaRef.current,
+            {
+                opacity: 0,
+                y: 400
+            }
+        )
+
+        tl.to(tiktokRef.current,
+            {
+                ease: "bounce.out",
+                repeat: -1,
+                repeatDelay: 3,
+                duration: 3,
+                rotate: 360
+            }, "-=1"
+        )
+
+        tl.to(instaRef.current,
+            {
+                ease: "bounce.out",
+                repeat: -1,
+                repeatDelay: 3,
+                duration: 3,
+                rotate: -360
+            }, "-=.5"
+        )
 
         tl.to('.letter',
             {
                 opacity: 1,
-                filter: "blur(4px)",
+                filter: "blur(1px)",
                 stagger: { each: .06, from: "random" },
                 repeat: -1,
                 repeatDelay: 1,
@@ -124,6 +161,14 @@ const ComingSoon = () => {
                     </div>
                 </div>
                 <div className={classes.comingSoon} ref={soonRef}>SOON</div>
+                <div className={classes.socials}>
+                    <div>  
+                        <img src={TikTok} alt="social-tiktok" className={classes.tiktok} ref={tiktokRef}/> 
+                    </div>
+                    <div> 
+                        <img src={Insta} alt="social-insta" className={classes.insta} ref={instaRef}/>
+                    </div>
+                </div>
             </div>
         </div>
     )

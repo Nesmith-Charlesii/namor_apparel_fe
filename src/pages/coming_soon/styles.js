@@ -12,6 +12,7 @@ const useStyles = createUseStyles({
         margin: 0
     },
     pageContent: {
+        width: "100%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -63,6 +64,21 @@ const useStyles = createUseStyles({
         marginTop: 0,
         marginBottom: 60,
     },
+    socials: {
+        position: "relative",
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center"
+    },
+    insta: {
+        height: "68px",
+        bottom: "0px"
+    },
+    tiktok: {
+        height: "90px",
+        bottom: "0px"
+    }
 })
 
 export default useStyles;
