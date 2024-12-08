@@ -4,6 +4,9 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Insta from '../../assets/image/insta_logo_icon.png';
 import TikTok from '../../assets/image/tok_tiktok_icon2.png';
+import asset1 from '../../assets/image/asset.jpeg';
+import asset2 from '../../assets/image/asset6.jpeg';
+import asset3 from '../../assets/image/asset5.jpeg';
 
 const ComingSoon = () => {
     const classes = useStyles()
@@ -19,7 +22,8 @@ const ComingSoon = () => {
     const soonRef = useRef();
     const instaRef = useRef();
     const tiktokRef = useRef();
-
+    //const signupRef = useReft();
+ 
     const tikTokLink = "https://www.tiktok.com/@house_of_namor"
     const instaLink = "https://www.instagram.com/house_of_namor/"
 
@@ -157,25 +161,33 @@ const ComingSoon = () => {
 
     return (
         <div className={classes.container} ref={containerRef}>
+            <div className={classes.backgroundImage}>
+                <img src={asset1} alt="bgImage" style={{height: "100vh",}}></img>
+            </div>
+            <div className={classes.signUp}>
+                <p>Sign Up</p>
+            </div>
             <div className={classes.pageContent}>
-                <div className={classes.comingSoon} ref={comingRef}>COMING</div>
-                <div className={classes.titleContainer} ref={titleContainer}>
-                    <div className={classes.titleAcronym} ref={titleAcronym}>
-                        <div>H</div>
-                        <div>.</div>
-                        <div>o</div>
-                        <div>.</div>
-                        <div>N</div>
+                <div className={classes.mainText}>
+                    <div className={classes.comingSoon} ref={comingRef}>COMING</div>
+                    <div className={classes.titleContainer} ref={titleContainer}>
+                        <div className={classes.titleAcronym} ref={titleAcronym}>
+                            <div>H</div>
+                            <div>.</div>
+                            <div>o</div>
+                            <div>.</div>
+                            <div>N</div>
+                        </div>
+                        <div className={classes.titleName} ref={titleName}>
+                        {
+                            letterArr.map((letter, index) => (
+                                <div className='letter' key={index}>{letter === "E" || letter === "f" ? letter + "\u00A0" : letter}</div>
+                            ))
+                        }
+                        </div>
                     </div>
-                    <div className={classes.titleName} ref={titleName}>
-                    {
-                        letterArr.map((letter, index) => (
-                            <div className='letter' key={index}>{letter === "E" || letter === "f" ? letter + "\u00A0" : letter}</div>
-                        ))
-                    }
-                    </div>
+                    <div className={classes.comingSoon} ref={soonRef}>SOON</div>
                 </div>
-                <div className={classes.comingSoon} ref={soonRef}>SOON</div>
                 <div className={classes.socials}>
                     <div>  
                         <a href={tikTokLink} target='_blank' rel="noreferrer">

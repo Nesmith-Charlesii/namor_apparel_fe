@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import theme from "../../shared/styles/theme";
+import asset from '../../assets/image/asset.jpeg';
 
 const useStyles = createUseStyles({
     container: {
@@ -11,12 +12,42 @@ const useStyles = createUseStyles({
         overflow: 'hidden',
         margin: 0
     },
+    backgroundImage: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+    },
     pageContent: {
         width: "100%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        padding: "0px 40px"
+    },
+    mainText: {
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    signUp: {
+        position: "absolute",
+        left: 0,
+        fontSize: "20px",
+        fontFamily: "Cormorant Garamond",
+        top: 20,
+        border: "1px solid black",
+        width: "200px",
+        display: "flex",
+        justifyContent: "center",
+        paddingRight: "24px",
+        borderRadius: "0px 10px 10px 0px",
+        backgroundColor: "rgb(50, 50, 50)",
+        color: "#fffeff",
+        letterSpacing: "4px",
+        fontWeight: 700
     },
     comingSoon: {
         opacity: 0,
@@ -29,9 +60,8 @@ const useStyles = createUseStyles({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        marginLeft: "41px",
         fontFamily: theme.fonts.primary,
-        color: "rgb(93, 93, 93)"
+        color: "rgb(87, 87, 87)"
     },
     titleAcronym: {
         display: "flex",
