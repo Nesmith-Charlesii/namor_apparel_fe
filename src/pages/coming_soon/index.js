@@ -47,8 +47,8 @@ const ComingSoon = () => {
         tl.to(letterBoxTopRef.current, 
             {
                 delay: 2,
-                y: -1000,
-                duration: 30,
+                y: "-43vh",
+                duration: 10,
                 ease: "sine.out"
             }, 0
         )
@@ -56,8 +56,8 @@ const ComingSoon = () => {
         tl.to(letterBoxBottomRef.current, 
             {
                 delay: 2,
-                y: 1000,
-                duration: 30,
+                y: "43vh",
+                duration: 10,
                 ease: "sine.out"
             }, 0
         )
@@ -65,9 +65,9 @@ const ComingSoon = () => {
         tl.to(containerRef.current,
             {
                 backgroundColor: "#f2f0ef",
-                duration: 3,
+                duration: 2,
                 ease: "power1.out"
-            }, "-=27.5"
+            }, "-=8.7"
         )
 
         tl.to(titleContainer.current, 
@@ -75,7 +75,7 @@ const ComingSoon = () => {
                 scale: .9,
                 duration: 6,
                 ease: "sine.inOut",
-            }, "-=27"
+            }, "-=8.5"
         )
 
         tl.from(".letter",
@@ -84,7 +84,7 @@ const ComingSoon = () => {
                 opacity: 0,
                 yPercent: -200, 
                 stagger: { each: 0.15, from: "start" },
-            }, "-=27.5"
+            }, "-=8.5"
         )
 
         tl.from(titleAcronym.current.querySelectorAll("div:nth-child(1), div:nth-child(3), div:nth-child(5)"),
@@ -96,7 +96,7 @@ const ComingSoon = () => {
                 skewY: 60,
                 skewX: 30,
                 stagger: { each: .7, from: "end" }
-            }, "-=27"
+            }, "-=8"
         )
 
         // Left period
@@ -104,14 +104,14 @@ const ComingSoon = () => {
             {
                 filter: "blur(10px)",
                 scale: 0,
-            }, "-=26.2"
+            }, "-=6.2"
         )
         // Right period
         tl.from(titleAcronym.current.querySelector("div:nth-child(4)"),
             {
                 filter: "blur(10px)",
                 scale: 0,
-            }, "-=26.5"
+            }, "-=6.5"
         )
 
         tl.to(

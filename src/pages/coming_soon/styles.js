@@ -107,11 +107,13 @@ const useStyles = createUseStyles({
     },
     topBorder: {
         backgroundColor: "black",
+        top: 0,
         height: "50vh",
         width: "100vw"
     },
     bottomBorder: {
         backgroundColor: "black",
+        bottom: 0,
         height: "50vh",
         width: "100vw"
     },
