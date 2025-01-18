@@ -4,9 +4,6 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Insta from '../../assets/image/insta_logo_icon.png';
 import TikTok from '../../assets/image/tok_tiktok_icon2.png';
-import asset1 from '../../assets/image/asset.jpeg';
-import asset2 from '../../assets/image/asset6.jpeg';
-import asset3 from '../../assets/image/asset5.jpeg';
 
 const ComingSoon = () => {
     const classes = useStyles()
@@ -22,7 +19,9 @@ const ComingSoon = () => {
     const soonRef = useRef();
     const instaRef = useRef();
     const tiktokRef = useRef();
-    //const signupRef = useReft();
+    const letterBoxTopRef = useRef();
+    const letterBoxBottomRef = useRef();
+    const borderRef = useRef();
  
     const tikTokLink = "https://www.tiktok.com/@house_of_namor"
     const instaLink = "https://www.instagram.com/house_of_namor/"
@@ -30,55 +29,89 @@ const ComingSoon = () => {
     useGSAP(() => {
         const tl = gsap.timeline()
 
-        tl.set('g', {
-            autoAlpha: 1
-        })
-
-        // tl.to(titleContainer.current, 
-        //     {
-        //         scale: 1.2,
-        //         duration: 4,
-        //         ease: "expo.inOut",
-        //     }, 0
-        // )
-
-        tl.from(titleAcronym.current.querySelectorAll("div:nth-child(1), div:nth-child(3), div:nth-child(5)"),
+        tl.to(borderRef.current,
             {
-                filter: "blur(10px)",
-                opacity: 0,
-                yPercent: 90,
-                scaleY: .5,
-                skewY: 60,
-                skewX: 30,
-                stagger: { each: .5, from: "end" },
-                delay: 1
+                width: "100vw",
+                duration: 2,
+                ease: "bounce.in"
+            }
+        )
+
+        tl.to(borderRef.current,
+            {
+                width: "0vw",
+                duration: .5
+            }
+        )
+
+        tl.to(letterBoxTopRef.current, 
+            {
+                delay: 2,
+                y: -1000,
+                duration: 30,
+                ease: "sine.out"
             }, 0
         )
 
-        tl.from(titleAcronym.current.querySelector("div:nth-child(2)"),
+        tl.to(letterBoxBottomRef.current, 
             {
-                filter: "blur(10px)",
-                scale: 0,
-                delay: 1
-            }, 0.7
+                delay: 2,
+                y: 1000,
+                duration: 30,
+                ease: "sine.out"
+            }, 0
         )
 
-        tl.from(titleAcronym.current.querySelector("div:nth-child(4)"),
-        {
-            filter: "blur(10px)",
-            scale: 0,
-            delay: 1
-        }, 0.2
-    )
+        tl.to(containerRef.current,
+            {
+                backgroundColor: "#f2f0ef",
+                duration: 3,
+                ease: "power1.out"
+            }, "-=27.5"
+        )
+
+        tl.to(titleContainer.current, 
+            {
+                scale: .9,
+                duration: 6,
+                ease: "sine.inOut",
+            }, "-=27"
+        )
 
         tl.from(".letter",
             {
                 filter: "blur(10px)",
                 opacity: 0,
                 yPercent: -200, 
-                stagger: { each: 0.09, from: "end" },
-                delay: 1
-            }, 0
+                stagger: { each: 0.15, from: "start" },
+            }, "-=27.5"
+        )
+
+        tl.from(titleAcronym.current.querySelectorAll("div:nth-child(1), div:nth-child(3), div:nth-child(5)"),
+            {
+                filter: "blur(15px)",
+                opacity: 0,
+                yPercent: 90,
+                scaleY: .5,
+                skewY: 60,
+                skewX: 30,
+                stagger: { each: .7, from: "end" }
+            }, "-=27"
+        )
+
+        // Left period
+        tl.from(titleAcronym.current.querySelector("div:nth-child(2)"),
+            {
+                filter: "blur(10px)",
+                scale: 0,
+            }, "-=26.2"
+        )
+        // Right period
+        tl.from(titleAcronym.current.querySelector("div:nth-child(4)"),
+            {
+                filter: "blur(10px)",
+                scale: 0,
+            }, "-=26.5"
         )
 
         tl.to(
@@ -87,7 +120,7 @@ const ComingSoon = () => {
                 opacity: .3,
                 duration: 1,
                 ease: "sine.in",
-            }, 
+            }, "-=4.3"
         );
 
         tl.to(
@@ -96,21 +129,25 @@ const ComingSoon = () => {
                 opacity: .3,
                 duration: 1,
                 ease: "sine.in",
-            }, "-=.5"
+            }, "-=3.7"
         );
 
         tl.from(tiktokRef.current,
             {
+                ease: "power2.inOut",
                 opacity: 0,
-                y: 400
-            }
+                y: 400,
+                duration: 2
+            }, "-=3"
         )
 
         tl.from(instaRef.current,
             {
+                ease: "power2.inOut",
                 opacity: 0,
-                y: 400
-            }
+                y: 400,
+                duration: 2
+            }, "-=2.6"
         )
 
         tl.to(tiktokRef.current,
@@ -130,7 +167,7 @@ const ComingSoon = () => {
                 repeatDelay: 3,
                 duration: 3,
                 rotate: -360
-            }, "-=.5"
+            }, "-=.8"
         )
 
         tl.to('.letter',
@@ -161,11 +198,14 @@ const ComingSoon = () => {
 
     return (
         <div className={classes.container} ref={containerRef}>
-            <div className={classes.backgroundImage}>
-                <img src={asset1} alt="bgImage" style={{height: "100vh",}}></img>
-            </div>
-            <div className={classes.signUp}>
-                <p>Sign Up</p>
+            <div className={classes.border} ref={borderRef}></div>
+            <div className={classes.letterBoxing}>
+                <div className={classes.topBorder} ref={letterBoxTopRef}>
+
+                </div>
+                <div className={classes.bottomBorder} ref={letterBoxBottomRef}>
+                    
+                </div>
             </div>
             <div className={classes.pageContent}>
                 <div className={classes.mainText}>

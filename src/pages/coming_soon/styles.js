@@ -4,18 +4,13 @@ import asset from '../../assets/image/asset.jpeg';
 
 const useStyles = createUseStyles({
     container: {
-        backgroundColor: "#fffeff",
+        backgroundColor: "#d8b796",
         height: "100vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         overflow: 'hidden',
         margin: 0
-    },
-    backgroundImage: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
     },
     pageContent: {
         width: "100%",
@@ -32,36 +27,21 @@ const useStyles = createUseStyles({
         justifyContent: "center",
         alignItems: "center",
     },
-    signUp: {
-        position: "absolute",
-        left: 0,
-        fontSize: "20px",
-        fontFamily: "Cormorant Garamond",
-        top: 20,
-        border: "1px solid black",
-        width: "200px",
-        display: "flex",
-        justifyContent: "center",
-        paddingRight: "24px",
-        borderRadius: "0px 10px 10px 0px",
-        backgroundColor: "rgb(50, 50, 50)",
-        color: "#fffeff",
-        letterSpacing: "4px",
-        fontWeight: 700
-    },
     comingSoon: {
         opacity: 0,
-        color: "#a97c4b",
+        color: "#cb9f72",
         fontSize: "11rem",
         fontFamily: theme.fonts.primary,
     },
     titleContainer: {
+        transform: "scale(1)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         fontFamily: theme.fonts.primary,
-        color: "rgb(87, 87, 87)"
+        color: "rgb(87, 87, 87)",
+        marginLeft: "24px"
     },
     titleAcronym: {
         display: "flex",
@@ -118,6 +98,29 @@ const useStyles = createUseStyles({
         '&:hover': {
             bottom: "10px"
         }
+    },
+    letterBoxing: {
+        position: "absolute",
+        display: "flex",
+        flexDirection: "column",
+        zIndex: 2
+    },
+    topBorder: {
+        backgroundColor: "black",
+        height: "50vh",
+        width: "100vw"
+    },
+    bottomBorder: {
+        backgroundColor: "black",
+        height: "50vh",
+        width: "100vw"
+    },
+    border: {
+        position: "absolute",
+        height: "1px",
+        width: "0vw",
+        zIndex: 3,
+        backgroundColor: "#d8b796",
     }
 })
 
