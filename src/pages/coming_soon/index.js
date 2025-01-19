@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import useStyles from './styles';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import Insta from '../../assets/image/insta_logo_icon.png';
 import TikTok from '../../assets/image/tok_tiktok_icon2.png';
 
@@ -25,6 +27,10 @@ const ComingSoon = () => {
  
     const tikTokLink = "https://www.tiktok.com/@house_of_namor"
     const instaLink = "https://www.instagram.com/house_of_namor/"
+
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+    const isSmallerScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     useGSAP(() => {
         const tl = gsap.timeline()
@@ -117,19 +123,19 @@ const ComingSoon = () => {
         tl.to(
             comingRef.current,
             {
-                opacity: .3,
+                opacity: .4,
                 duration: 1,
                 ease: "sine.in",
-            }, "-=4.3"
+            }, "-=2"
         );
 
         tl.to(
             soonRef.current,
             {
-                opacity: .3,
+                opacity: .4,
                 duration: 1,
                 ease: "sine.in",
-            }, "-=3.7"
+            }, "-=1"
         );
 
         tl.from(tiktokRef.current,
@@ -138,7 +144,7 @@ const ComingSoon = () => {
                 opacity: 0,
                 y: 400,
                 duration: 2
-            }, "-=3"
+            }, "-=1"
         )
 
         tl.from(instaRef.current,
@@ -147,7 +153,7 @@ const ComingSoon = () => {
                 opacity: 0,
                 y: 400,
                 duration: 2
-            }, "-=2.6"
+            }, "-=1.2"
         )
 
         tl.to(tiktokRef.current,
@@ -170,6 +176,18 @@ const ComingSoon = () => {
             }, "-=.8"
         )
 
+        tl.to(tiktokRef.current,
+            {
+                zIndex: 2
+            }, "-=4"
+        )
+
+        tl.to(instaRef.current,
+            {
+                zIndex: 2
+            }, "-=4"
+        )
+
         tl.to('.letter',
             {
                 opacity: 1,
@@ -179,7 +197,7 @@ const ComingSoon = () => {
                 repeatDelay: 2,
                 yoyo: true,
                 ease: "sine.out"
-            }
+            }, "+=2"
         )
 
         tl.to(titleAcronym.current.querySelectorAll("div:nth-child(1), div:nth-child(3), div:nth-child(5)"),
@@ -191,7 +209,7 @@ const ComingSoon = () => {
                 repeatDelay: 2,
                 yoyo: true,
                 ease: "sine.out"
-            }
+            }, "+=2"
         )
 
     }, { dependencies: [], scope: containerRef })
@@ -207,7 +225,10 @@ const ComingSoon = () => {
                     
                 </div>
             </div>
-            <div className={classes.pageContent}>
+            <div className={
+                isSmallerScreen ? classes.pageContentPhone : 
+                isSmallScreen ? classes.pageContentTablet : classes.pageContent
+            }>
                 <div className={classes.mainText}>
                     <div className={classes.comingSoon} ref={comingRef}>COMING</div>
                     <div className={classes.titleContainer} ref={titleContainer}>
@@ -228,15 +249,32 @@ const ComingSoon = () => {
                     </div>
                     <div className={classes.comingSoon} ref={soonRef}>SOON</div>
                 </div>
-                <div className={classes.socials}>
+                <div className={
+                    isSmallerScreen ? classes.socialsPhone : 
+                    isSmallScreen ? classes.socialsTablet : classes.socials
+                    }>
                     <div>  
                         <a href={tikTokLink} target='_blank' rel="noreferrer">
-                            <img src={TikTok} alt="social-tiktok" className={classes.tiktok} ref={tiktokRef} /> 
+                            <img 
+                            src={TikTok} 
+                            alt="social-tiktok" 
+                            className={
+                                isSmallerScreen ? classes.tiktokPhone :
+                                isSmallScreen ? classes.tiktokTablet : classes.tiktok
+                            } 
+                            ref={tiktokRef} /> 
                         </a>
                     </div>
                     <div> 
                         <a href={instaLink} target='_blank' rel="noreferrer">
-                            <img src={Insta} alt="social-insta" className={classes.insta} ref={instaRef}/>
+                            <img 
+                            src={Insta} 
+                            alt="social-insta" 
+                            className={
+                                isSmallerScreen ? classes.instaPhone :
+                                isSmallScreen ? classes.instaTablet : classes.insta
+                            } 
+                            ref={instaRef}/>
                         </a>
                     </div>
                 </div>
