@@ -12,16 +12,24 @@ const useStyles = createUseStyles({
         margin: 0
     },
     pageContent: {
-        maxWidth: "1290px",
-        width: "100%",
+        boxSizing: "border-box",
+        maxWidth: "1920px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "0px 40px"
+    },
+    pageContentShort: {
+        transform: "scale(.55)",
+        boxSizing: "border-box",
+        maxWidth: "1920px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
     },
     pageContentTablet: {
-        transform: "scale(.7)",
+        transform: "scale(.55)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -44,6 +52,7 @@ const useStyles = createUseStyles({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        padding: "0px 40px"
     },
     comingSoon: {
         opacity: 0,
@@ -52,14 +61,13 @@ const useStyles = createUseStyles({
         fontFamily: theme.fonts.primary,
     },
     titleContainer: {
-        transform: "scale(1)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         fontFamily: theme.fonts.primary,
         color: "rgb(70, 70, 70)",
-        marginLeft: "24px"
+        marginLeft: "28px"
     },
     titleAcronym: {
         display: "flex",
@@ -91,13 +99,12 @@ const useStyles = createUseStyles({
         letterSpacing: 24,
         marginTop: 0,
         marginBottom: 60,
+        marginLeft: "7.5px"
     },
     socials: {
-        position: "relative",
-        bottom: "55px",
         width: "100%",
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "space-evenly",
         alignItems: "center",
     },
     socialsTablet: {
@@ -105,7 +112,7 @@ const useStyles = createUseStyles({
         marginTop: "40px",
         width: "100%",
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "space-evenly",
         alignItems: "center",
     },
     socialsPhone: {
@@ -114,7 +121,7 @@ const useStyles = createUseStyles({
         marginTop: "80px",
         width: "100%",
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "space-evenly",
         alignItems: "center",
     },
     insta: {
@@ -137,7 +144,7 @@ const useStyles = createUseStyles({
     },
     instaPhone: {
         position: "relative",
-        height: "90px",
+        height: "65px",
         bottom: "0px",
         transition: "bottom 0.4s ease",
         '&:hover': {
@@ -164,7 +171,7 @@ const useStyles = createUseStyles({
     },
     tiktokPhone: {
         position: "relative",
-        height: "120px",
+        height: "90px",
         bottom: "0px",
         transition: "bottom 0.4s ease",
         '&:hover': {
@@ -192,7 +199,6 @@ const useStyles = createUseStyles({
     border: {
         position: "absolute",
         height: "1px",
-        width: "0vw",
         zIndex: 3,
         backgroundColor: "#cb9f72",
     }

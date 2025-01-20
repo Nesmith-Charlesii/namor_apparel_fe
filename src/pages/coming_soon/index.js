@@ -29,8 +29,9 @@ const ComingSoon = () => {
     const instaLink = "https://www.instagram.com/house_of_namor/"
 
     const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-    const isSmallerScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const isTabletScreen = useMediaQuery(theme.breakpoints.down('md'));
+    const isPhoneScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const isShortScreen = useMediaQuery("(max-height: 1080px)")
 
     useGSAP(() => {
         const tl = gsap.timeline()
@@ -45,7 +46,8 @@ const ComingSoon = () => {
 
         tl.to(borderRef.current,
             {
-                width: "0vw",
+                scaleX: 0,
+                transformOrigin: "left",
                 duration: .5
             }
         )
@@ -53,7 +55,8 @@ const ComingSoon = () => {
         tl.to(letterBoxTopRef.current, 
             {
                 delay: 2,
-                y: "-43vh",
+                scaleY: 0.15,
+                transformOrigin: "top",
                 duration: 10,
                 ease: "sine.out"
             }, 0
@@ -62,7 +65,8 @@ const ComingSoon = () => {
         tl.to(letterBoxBottomRef.current, 
             {
                 delay: 2,
-                y: "43vh",
+                scaleY: 0.15,
+                transformOrigin: "bottom",
                 duration: 10,
                 ease: "sine.out"
             }, 0
@@ -226,8 +230,10 @@ const ComingSoon = () => {
                 </div>
             </div>
             <div className={
-                isSmallerScreen ? classes.pageContentPhone : 
-                isSmallScreen ? classes.pageContentTablet : classes.pageContent
+                isPhoneScreen ? classes.pageContentPhone : 
+                isTabletScreen ? classes.pageContentTablet : 
+                isShortScreen ? classes.pageContentShort:
+                classes.pageContent
             }>
                 <div className={classes.mainText}>
                     <div className={classes.comingSoon} ref={comingRef}>COMING</div>
@@ -250,8 +256,8 @@ const ComingSoon = () => {
                     <div className={classes.comingSoon} ref={soonRef}>SOON</div>
                 </div>
                 <div className={
-                    isSmallerScreen ? classes.socialsPhone : 
-                    isSmallScreen ? classes.socialsTablet : classes.socials
+                    isPhoneScreen ? classes.socialsPhone : 
+                    isTabletScreen ? classes.socialsTablet : classes.socials
                     }>
                     <div>  
                         <a href={tikTokLink} target='_blank' rel="noreferrer">
@@ -259,8 +265,8 @@ const ComingSoon = () => {
                             src={TikTok} 
                             alt="social-tiktok" 
                             className={
-                                isSmallerScreen ? classes.tiktokPhone :
-                                isSmallScreen ? classes.tiktokTablet : classes.tiktok
+                                isPhoneScreen ? classes.tiktokPhone :
+                                isTabletScreen ? classes.tiktokTablet : classes.tiktok
                             } 
                             ref={tiktokRef} /> 
                         </a>
@@ -271,8 +277,8 @@ const ComingSoon = () => {
                             src={Insta} 
                             alt="social-insta" 
                             className={
-                                isSmallerScreen ? classes.instaPhone :
-                                isSmallScreen ? classes.instaTablet : classes.insta
+                                isPhoneScreen ? classes.instaPhone :
+                                isTabletScreen ? classes.instaTablet : classes.insta
                             } 
                             ref={instaRef}/>
                         </a>

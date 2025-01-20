@@ -14,7 +14,7 @@ function App() {
       temp &&
       <Navbar />
     }
-    <Router>
+    <Router basename="/namor_apparel_fe">
       {
         temp &&
         <Routes>
