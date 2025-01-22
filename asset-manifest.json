@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/namor_apparel_fe/static/css/main.a846a329.css",
-    "main.js": "/namor_apparel_fe/static/js/main.c4deb64d.js",
+    "main.css": "/namor_apparel_fe/static/css/main.1b3bdd85.css",
+    "main.js": "/namor_apparel_fe/static/js/main.443b650a.js",
     "static/js/453.665c3be7.chunk.js": "/namor_apparel_fe/static/js/453.665c3be7.chunk.js",
     "static/media/background_vid.mp4": "/namor_apparel_fe/static/media/background_vid.90b779b51c93d12216c6.mp4",
     "static/media/tok_tiktok_icon2.png": "/namor_apparel_fe/static/media/tok_tiktok_icon2.bed1e33c88b8c3c12804.png",
     "static/media/insta_logo_icon.png": "/namor_apparel_fe/static/media/insta_logo_icon.0d8edca0af1a847ff2e6.png",
     "index.html": "/namor_apparel_fe/index.html",
-    "main.a846a329.css.map": "/namor_apparel_fe/static/css/main.a846a329.css.map",
-    "main.c4deb64d.js.map": "/namor_apparel_fe/static/js/main.c4deb64d.js.map",
+    "main.1b3bdd85.css.map": "/namor_apparel_fe/static/css/main.1b3bdd85.css.map",
+    "main.443b650a.js.map": "/namor_apparel_fe/static/js/main.443b650a.js.map",
     "453.665c3be7.chunk.js.map": "/namor_apparel_fe/static/js/453.665c3be7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a846a329.css",
-    "static/js/main.c4deb64d.js"
+    "static/css/main.1b3bdd85.css",
+    "static/js/main.443b650a.js"
   ]
 }
