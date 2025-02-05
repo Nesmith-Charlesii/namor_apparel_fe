@@ -33,6 +33,16 @@ const ComingSoon = () => {
     const isPhoneScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const isShortScreen = useMediaQuery("(max-height: 1080px)")
 
+    const handleTouchEnd = (e) => {
+        const tiktokAnchor = document.getElementById("tikTokLink");
+        const instagramLink = document.getElementById("instagramLink");
+        if(tiktokAnchor) {
+            tiktokAnchor.click()
+        } else {
+            instagramLink.click()
+        }
+    }
+
     useGSAP(() => {
         const tl = gsap.timeline()
 
@@ -47,7 +57,7 @@ const ComingSoon = () => {
         tl.to(borderRef.current,
             {
                 scaleX: 0,
-                transformOrigin: "left",
+                transformOrigin: "center",
                 duration: .5
             }
         )
@@ -182,13 +192,13 @@ const ComingSoon = () => {
 
         tl.to(tiktokRef.current,
             {
-                zIndex: 2
+                zIndex: 3
             }, "-=4"
         )
 
         tl.to(instaRef.current,
             {
-                zIndex: 2
+                zIndex: 3
             }, "-=4"
         )
 
@@ -220,15 +230,14 @@ const ComingSoon = () => {
 
     return (
         <div className={classes.container} ref={containerRef}>
-            <div className={classes.border} ref={borderRef}></div>
-            <div className={classes.letterBoxing}>
-                <div className={classes.topBorder} ref={letterBoxTopRef}>
+             <div className={classes.topBorder} ref={letterBoxTopRef}>
 
-                </div>
-                <div className={classes.bottomBorder} ref={letterBoxBottomRef}>
-                    
-                </div>
             </div>
+            <div className={classes.border} ref={borderRef}></div>
+            {/* <div className={classes.letterBoxing}>
+               
+                
+            </div> */}
             <div className={
                 isPhoneScreen ? classes.pageContentPhone : 
                 isTabletScreen ? classes.pageContentTablet : 
@@ -259,8 +268,8 @@ const ComingSoon = () => {
                     isPhoneScreen ? classes.socialsPhone : 
                     isTabletScreen ? classes.socialsTablet : classes.socials
                     }>
-                    <div>  
-                        <a href={tikTokLink} target='_blank' rel="noreferrer">
+                    <button style={{border: "none"}} onTouchEnd={(e) => handleTouchEnd(e)}>  
+                        <a id="tikTokLink" href={tikTokLink} target='_blank' rel="noreferrer">
                             <img 
                             src={TikTok} 
                             alt="social-tiktok" 
@@ -270,9 +279,9 @@ const ComingSoon = () => {
                             } 
                             ref={tiktokRef} /> 
                         </a>
-                    </div>
-                    <div> 
-                        <a href={instaLink} target='_blank' rel="noreferrer">
+                    </button>
+                    <button style={{border: "none"}} > 
+                        <a id="instagramLink" href={instaLink} target='_blank' rel="noreferrer">
                             <img 
                             src={Insta} 
                             alt="social-insta" 
@@ -282,8 +291,11 @@ const ComingSoon = () => {
                             } 
                             ref={instaRef}/>
                         </a>
-                    </div>
+                    </button>
                 </div>
+            </div>
+            <div className={classes.bottomBorder} ref={letterBoxBottomRef}>
+                    
             </div>
         </div>
     )

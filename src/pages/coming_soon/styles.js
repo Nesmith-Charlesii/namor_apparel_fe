@@ -6,6 +6,7 @@ const useStyles = createUseStyles({
         backgroundColor: "#d8b796",
         height: "100vh",
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         overflow: 'hidden',
@@ -13,7 +14,6 @@ const useStyles = createUseStyles({
     },
     pageContent: {
         boxSizing: "border-box",
-        maxWidth: "1920px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -22,7 +22,6 @@ const useStyles = createUseStyles({
     pageContentShort: {
         transform: "scale(.55)",
         boxSizing: "border-box",
-        maxWidth: "1920px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -37,7 +36,7 @@ const useStyles = createUseStyles({
         padding: "0px 40px"
     },
     pageContentPhone: {
-        transform: "scale(.55)",
+        transform: "scale(.45)",
         width: "100%",
         display: "flex",
         flexDirection: "column",
@@ -185,19 +184,24 @@ const useStyles = createUseStyles({
         zIndex: 2
     },
     topBorder: {
+        position: "fixed",
         backgroundColor: "rgb(20, 20, 20)",
         top: 0,
-        height: "50vh",
+        height: "50%",
         width: "100vw"
     },
     bottomBorder: {
+        position: "fixed",
         backgroundColor: "rgb(20, 20, 20)",
         bottom: 0,
-        height: "50vh",
-        width: "100vw"
+        height: "50%",
+        width: "100vw",
     },
     border: {
         position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
         height: "1px",
         zIndex: 3,
         backgroundColor: "#cb9f72",
